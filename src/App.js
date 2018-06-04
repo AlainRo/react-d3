@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './App.css';
+//import './App.css';
+import { Button, Card, Row, Col } from 'react-materialize';
 import { withWindowSizeListener } from 'react-window-size-listener';
 import BarChart from './BarChart';
 import CircleWave from './Circles';
@@ -29,28 +30,31 @@ class App extends Component {
 
      return (
         <div className='App'>
-          <div>
-            <BarChart data={data} size={halfsize} />
-          </div>
-          <div>
-            <CircleWave size={halfsize}/>
-          </div>
-          <div>
-            <Cluster 
-                clusterPadding={6}
-                container={"#svgC"}
-                height={500}
-                m={5}
-                maxRadius={10}
-                n={100}
-                padding={1.5}
-                width={960}
-              />
-          </div>          
-           <div>
-             <FauxDOM />
-           </div>
-
+        <Row>
+          <Row>
+            <Col s={6}>
+              <BarChart data={data} size={[300,300]} /> {/*//{halfsize} />*/}
+            </Col>
+              <CircleWave size={[300,300]} /> {/*//{halfsize} />*/}
+          </Row>
+          <Row>
+            <Col s={6}>
+              <Cluster 
+                  clusterPadding={6}
+                  container={"#svgC"}
+                  height={500}
+                  m={5}
+                  maxRadius={10}
+                  n={100}
+                  padding={1.5}
+                  width={960}
+                />
+            </Col>        
+            <Col s={6}>
+               <FauxDOM />
+            </Col>
+          </Row>
+        </Row>
         </div>
      )
    }

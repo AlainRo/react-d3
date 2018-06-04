@@ -13,7 +13,7 @@ class D3Component extends React.Component {
   render() {
     const { className, style } = this.props;
     return (
-      <div ref={(node) => { this.initialize(node, this.props) }} className={className} style={Object.assign({ width: '100%'}, style)} />
+      <div ref={(node) => { this.initialize(node, this.props) }} className={className}  />
     );
   }
 }

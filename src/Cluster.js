@@ -1,4 +1,4 @@
-import './App.css';
+//import './App.css';
 //import windowSize from 'react-window-size-listener';
 import {forceCluster} from  'd3-force-cluster';
 import {forceAttract} from  'd3-force-attract';
@@ -50,12 +50,12 @@ class Cluster extends D3Component {
 
       // cluster by section
       .force('cluster', forceCluster()
-        .centers(function (d) { return clusters[d.cluster]; })
+        .centers(d => clusters[d.cluster])
         .strength(0.5)
         .centerInertia(0.1))
 
       // apply collision with padding
-      .force('collide', d3.forceCollide(function (d) { return d.radius + padding; })
+      .force('collide', d3.forceCollide(d => d.radius + padding)
         .strength(0))
 
       .on('tick', layoutTick)
@@ -64,7 +64,7 @@ class Cluster extends D3Component {
     const node = svg.selectAll('circle')
       .data(nodes)
       .enter().append('circle')
-        .style('fill', function (d) { return color(d.cluster/10); })
+        .style('fill', d => color(d.cluster/10))
         .call(d3.drag()
           .on('start', dragstarted)
           .on('drag', dragged)
@@ -91,16 +91,16 @@ class Cluster extends D3Component {
     // ramp up collision strength to provide smooth transition
     const transitionTime = 3000;
     const t = d3.timer(function (elapsed) {
-      var dt = elapsed / transitionTime;
+      const dt = elapsed / transitionTime;
       simulation.force('collide').strength(Math.pow(dt, 2) * 0.7);
       if (dt >= 1.0) t.stop();
     });
       
     function layoutTick (e) {
       node
-        .attr('cx', function (d) { return d.x; })
-        .attr('cy', function (d) { return d.y; })
-        .attr('r', function (d) { return d.radius; });
+        .attr('cx', d => d.x)
+        .attr('cy', d => d.y)
+        .attr('r', d => d.radius);
     }
 
   };

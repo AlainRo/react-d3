@@ -1,4 +1,4 @@
-import './App.css';
+//import './App.css';
 //import windowSize from 'react-window-size-listener';
 
 const D3Component = require('./D3Component.js');
