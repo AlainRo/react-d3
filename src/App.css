@@ -27,14 +27,9 @@
   to { transform: rotate(360deg); }
 }
 
-div {
-  display: grid;
-  grid-template-columns: 500px 500px;
-  grid-gap: 20px;
-}
-/*
-button {
-  position: absolute;
-  margin: 5em;
-}
-*/
+/*.row .col {
+    float: left;
+    box-sizing: border-box;
+    padding: 0 .75rem;
+    min-height: 1px;
+}*/
