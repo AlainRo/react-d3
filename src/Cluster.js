@@ -10,8 +10,8 @@ const d3 = require('d3');
 class Cluster extends D3Component {
 
   initialize(nodeR, props) {
-    const {width, height, padding, clusterPadding, maxRadius} = this.props;
-
+    const {size, padding, clusterPadding, maxRadius} = this.props;
+    const width = size[0], height = size[1];
     const svg = d3.select(nodeR).append('svg');
 
     svg.attr('width', width);

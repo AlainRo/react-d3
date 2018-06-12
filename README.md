@@ -1,13 +1,12 @@
-
-
-#BoilerPlate et config
+# React sans create-react-app mais avec webpack, babel, ...
 https://medium.freecodecamp.org/part-1-react-app-from-scratch-using-webpack-4-562b1d231e75
 
 une confirmation: https://www.valentinog.com/blog/react-webpack-babel/
+et une autre: https://medium.codylamson.com/minimum-viable-webpack-babel-react-setup-without-create-react-app-47959f43fbac
 
-# Essai d'intégration de d3js dans React
+# Quatre exemples d'intégration de d3js dans React
 
-Avec rafraichissement quand la taille de la fenetre change.
+Avec rafraichissement quand la taille de la fenetre change (enfin plus ou moins...)
 
 ## Un exemple de d3 récrit en React
 http://bl.ocks.org/slashdotdash/8307069
@@ -22,4 +21,7 @@ https://hackernoon.com/react-faux-dom-responsive-svg-graphs-with-d3-js-and-react
 https://github.com/Olical/react-faux-dom
 
 ## Essai de la méthode idyll
+
+à faire
+
 

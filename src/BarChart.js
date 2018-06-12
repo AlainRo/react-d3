@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import {scaleLinear} from 'd3-scale';
 import {max} from 'd3-array';
 import {select} from 'd3-selection';
-import windowSize from 'react-window-size-listener';
+//import windowSize from 'react-window-size-listener';
 
 class BarChart extends Component {
    constructor(props){

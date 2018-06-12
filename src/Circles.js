@@ -1,6 +1,3 @@
-//import './App.css';
-//import windowSize from 'react-window-size-listener';
-
 const D3Component = require('./D3Component.js');
 const d3 = require('d3');
 
@@ -42,9 +39,7 @@ class CircleWave extends D3Component {
     d3.timer(() => path.attr("d", d => d(angles)));
   };
   update(props) {
-    console.log('update', this.props, props);
     radius = props.size[0]/4;
-    console.log(radius);
   }
 
 };

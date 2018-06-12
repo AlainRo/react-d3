@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-//import { Button, Card, Row, Col } from 'react-materialize';
 import { withWindowSizeListener } from 'react-window-size-listener';
 import BarChart from './BarChart';
 import CircleWave from './Circles';
@@ -26,16 +25,20 @@ class App extends Component {
      const data = [5, 8, 1, 3, 1, 6, 5, 4, 3, 4];
      const {windowWidth, windowHeight} = this.props.windowSize;
      const size = [windowWidth || window.innerWidth,windowHeight || window.innerHeight];
-     const halfsize = [Math.min(size[0]/2, size[1]), Math.min(size[0]/2, size[1])];
+     const halfsize = [Math.min(size[0]/4, size[1]), Math.min(size[0]/4, size[1])];
 
      return (
         <div className='App'>
           <div className="row">
             <div className="col s6 chart">
-              <BarChart data={data} size={[300,300]} /> {/*//{halfsize} />*/}
+
+              <BarChart data={data} size={halfsize} />
+
+              <h5>Un triste barChart react</h5>
             </div>
             <div className="chart s6 chart">
-              <CircleWave size={[300,300]} /> {/*//{halfsize} />*/}
+              <CircleWave size={halfsize} />
+              <h5>Un cercle d3.js libre</h5>
             </div>
           </div>
           <div className="row">
@@ -43,16 +46,18 @@ class App extends Component {
               <Cluster 
                   clusterPadding={6}
                   container={"#svgC"}
-                  height={500}
+                  size={halfsize}
                   m={5}
                   maxRadius={10}
                   n={100}
                   padding={1.5}
-                  width={960}
                 />
+              <h5>Un bain de bulles colorées</h5>
             </div>        
             <div className="col s6 chart">
+
                <FauxDOM />
+               <h5>Un 'FauxDom' très fonctionnel</h5>
             </div>
           </div>
 
